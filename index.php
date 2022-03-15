@@ -29,7 +29,9 @@
 
                 for ($i=0; $i<$num_filas; $i++){
                     $r = $consulta -> fetch_array();
-                    echo '<button type="button" class="btn btn-primary col-12">'.$r['tema'].'</button><br><br>';
+                    ?>
+                    <button onclick="cargaTema('<?php echo $r['tema']?>')" type="button" class="btn btn-primary col-12"><?php echo $r['tema']?></button><br><br>
+                    <?php
                 }
 
             ?>     

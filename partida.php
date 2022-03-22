@@ -9,14 +9,9 @@ $mysqli = conectaBBDD();
   El tema que has elegido es <?php echo $tema;?>
 </div>
 <?php
-$consulta = $mysqli -> query("SELECT * FROM `preguntas` WHERE `tema`='$tema' ");
-$num_filas = $consulta -> num_rows;
+$consulta = $mysqli -> query("SELECT * FROM `preguntas` WHERE `tema`='$tema' ORDER BY RAND() LIMIT 1");
+$r = $consulta -> fetch_array();
 
-$pregunta_elegida = rand(0, $num_filas);
-
-for ($i=0; $i<$pregunta_elegida; $i++){
-    $r = $consulta -> fetch_array();
-}
 
 
 ?>
